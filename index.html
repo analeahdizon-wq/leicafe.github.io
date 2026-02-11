@@ -1,11 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Shop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p>My GitHub Pages site is working!</p>
+
+<nav>
+  <h2 class="logo">Simple Shop</h2>
+  <div>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('shop')">Shop</button>
+    <button onclick="showPage('contact')">Contact</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <h1>Welcome to Simple Shop</h1>
+  <p>Your favorite mini online store.</p>
+</section>
+
+<!-- SHOP -->
+<section id="shop" class="page">
+  <h1>Products</h1>
+
+  <div class="product">
+    <h3>Coffee</h3>
+    <p>₱150</p>
+    <button onclick="addToCart('Coffee',150)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h3>Cake</h3>
+    <p>₱250</p>
+    <button onclick="addToCart('Cake',250)">Add to Cart</button>
+  </div>
+
+  <div class="cart">
+    <h3>Cart</h3>
+    <p id="cartItems">No items yet.</p>
+    <p><strong>Total: ₱<span id="total">0</span></strong></p>
+    <button class="checkout" onclick="checkout()">Checkout</button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+  <h1>Contact Us</h1>
+
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
