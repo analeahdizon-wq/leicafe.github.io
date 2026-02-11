@@ -9,11 +9,13 @@
       margin: 0;
       background: #f4f4f4;
     }
+
     nav {
       background: #333;
       padding: 10px;
       text-align: center;
     }
+
     nav button {
       background: none;
       color: white;
@@ -34,6 +36,7 @@
       margin: 20px;
       border-radius: 8px;
     }
+
     .active {
       display: block;
     }
@@ -46,11 +49,13 @@
     <button onclick="showPage('about')">About</button>
     <button onclick="showPage('contact')">Contact</button>
   </nav>
+
   <!-- Pages -->
   <div id="home" class="page active">
     <h1>Welcome</h1>
     <p>This is the Home page.</p>
   </div>
+
   <div id="about" class="page">
     <h1>About Us</h1>
     <p>This is the About page.</p>
@@ -60,6 +65,7 @@
     <h1>Contact</h1>
     <p>Email: hello@example.com</p>
   </div>
+
   <!-- JavaScript -->
   <script>
     function showPage(pageId) {
