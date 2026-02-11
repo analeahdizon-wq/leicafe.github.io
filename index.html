@@ -1,64 +1,77 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+  <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Shop</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Simple Toggle Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    nav {
+      background: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav button {
+      background: none;
+      color: white;
+      border: none;
+      margin: 0 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      display: none;
+      padding: 40px;
+      background: white;
+      margin: 20px;
+      border-radius: 8px;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-
-<nav>
-  <h2 class="logo">Simple Shop</h2>
-  <div>
+ <!-- Navigation -->
+  <nav>
     <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('shop')">Shop</button>
+    <button onclick="showPage('about')">About</button>
     <button onclick="showPage('contact')">Contact</button>
-  </div>
-</nav>
+  </nav>
 
-<!-- HOME -->
-<section id="home" class="page active">
-  <h1>Welcome to Simple Shop</h1>
-  <p>Your favorite mini online store.</p>
-</section>
-
-<!-- SHOP -->
-<section id="shop" class="page">
-  <h1>Products</h1>
-
-  <div class="product">
-    <h3>Coffee</h3>
-    <p>₱150</p>
-    <button onclick="addToCart('Coffee',150)">Add to Cart</button>
+  <!-- Pages -->
+  <div id="home" class="page active">
+    <h1>Welcome</h1>
+    <p>This is the Home page.</p>
   </div>
 
-  <div class="product">
-    <h3>Cake</h3>
-    <p>₱250</p>
-    <button onclick="addToCart('Cake',250)">Add to Cart</button>
+  <div id="about" class="page">
+    <h1>About Us</h1>
+    <p>This is the About page.</p>
   </div>
 
-  <div class="cart">
-    <h3>Cart</h3>
-    <p id="cartItems">No items yet.</p>
-    <p><strong>Total: ₱<span id="total">0</span></strong></p>
-    <button class="checkout" onclick="checkout()">Checkout</button>
+  <div id="contact" class="page">
+    <h1>Contact</h1>
+    <p>Email: hello@example.com</p>
   </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact" class="page">
-  <h1>Contact Us</h1>
-
-  <form id="contactForm">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Your Email" required>
-    <textarea id="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<script src="script.js"></script>
+  <!-- JavaScript -->
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
 </body>
-</html>
